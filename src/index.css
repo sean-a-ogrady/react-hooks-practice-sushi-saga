@@ -10,7 +10,7 @@ body {
   grid-auto-rows: minmax(100px, auto);
   align-items: center;
   grid-template-areas:
-    ". . . . ."
+    ". fm fm fm ."
     ". bt bt bt ."
     ". . rm . ."
     ". tb tb tb .";
@@ -78,4 +78,13 @@ body {
   height: 428px;
   width: 700px;
   margin: auto;
+}
+
+#budget-form {
+  grid-area: fm;
+  display: flex;
+}
+
+#budget-form label {
+  margin-right: 10px;
 }

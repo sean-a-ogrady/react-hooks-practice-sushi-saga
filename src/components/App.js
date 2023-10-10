@@ -25,7 +25,7 @@ DELIVERABLES
 
 BONUS DELIVERABLES
 ------------------
-- [ ] Add a form for customers to add more money to their balance
+- [x] Add a form for customers to add more money to their balance
 - [x] Return to the beginning of conveyer belt when the end of the sushi line is reached
 - [ ] Anything else
 

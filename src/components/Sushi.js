@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
-function Sushi({name, price, image, setEmptyPlates, setBudget, budget}) {
-
-  const [isEaten, setIsEaten] = useState(false);
+function Sushi({id, name, price, image, setEmptyPlates, setBudget, budget, isEaten, setSushiList}) {
 
   function eatSushi() {
     if (isEaten) return;
@@ -12,7 +10,7 @@ function Sushi({name, price, image, setEmptyPlates, setBudget, budget}) {
     }
     setEmptyPlates(emptyPlates => emptyPlates + 1);
     setBudget(budget - price);
-    setIsEaten(true);
+    setSushiList(sushiList => sushiList.map(sushi => sushi.id === id ? {...sushi, isEaten: true} : sushi))
   }
 
   return (

@@ -11,7 +11,7 @@ function SushiContainer({setEmptyPlates, setBudget, budget}) {
   useEffect(() => {
     fetch(url)
       .then(response => response.json())
-      .then(setSushiList);
+      .then(data => setSushiList(data.map(sushi => {return {...sushi, isEaten: false}})));
   }, [])
 
   return (
@@ -19,12 +19,15 @@ function SushiContainer({setEmptyPlates, setBudget, budget}) {
       {sushiList.slice(displayedSushi[0], displayedSushi[1]).map(sushi =>
         <Sushi
           key={sushi.id}
+          id={sushi.id}
           name={sushi.name}
           price={sushi.price}
           image={sushi.img_url}
           setEmptyPlates={setEmptyPlates}
           setBudget={setBudget}
           budget={budget}
+          isEaten={sushi.isEaten}
+          setSushiList={setSushiList}
         />)}
       <MoreButton sushiList={sushiList} setDisplayedSushi={setDisplayedSushi} />
     </div>
